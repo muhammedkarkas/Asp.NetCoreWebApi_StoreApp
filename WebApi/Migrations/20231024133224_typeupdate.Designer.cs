@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi.Repositories;
 
@@ -10,9 +11,10 @@ using WebApi.Repositories;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20231024133224_typeupdate")]
+    partial class typeupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,26 +41,6 @@ namespace WebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Price = 75m,
-                            Title = "İnce Memed"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Price = 175m,
-                            Title = "Suç ve Ceza"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Price = 225m,
-                            Title = "Acımak"
-                        });
                 });
 #pragma warning restore 612, 618
         }
